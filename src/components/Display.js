@@ -16,7 +16,6 @@ const Display = (props) => {
 
       if (displayFunc) {
         displayFunc();
-        console.log("clicked");
       }
     });
   };

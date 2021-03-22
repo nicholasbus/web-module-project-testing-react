@@ -72,14 +72,12 @@ test("when the fetch button is pressed, the amount of select options rendered is
 
 test("when the fetch button is pressed, the passed function is called", () => {
   const mockDisplayFunc = jest.fn();
-
-  render(<Display displayFunc={mockDisplayFunc} />);
+  render(<Display displayFunc={mockDisplayFunc()} />);
   mockFetchShow.mockResolvedValueOnce(testShow);
 
   const button = screen.getByRole("button");
   userEvent.click(button);
 
-  console.log(mockDisplayFunc.mock);
   expect(mockDisplayFunc).toHaveBeenCalled();
 });
 
